@@ -29,6 +29,7 @@ function chooseArea(block) {
     }, 2000);
   }
   checkWin();
+  checkTie();
   if (gameOver) {
     playerText.textContent = `Game over, ${winner}'s Won!`;
     blocks.forEach((block) => (block.style.pointerEvents = "none"));
@@ -107,6 +108,15 @@ function checkDia() {
   dia1;
   if (dia1) return (winner = blocks[0].textContent);
   if (dia2) return (winner = blocks[2].textContent);
+}
+
+function checkTie() {
+  const values = [];
+  blocks.forEach((block) => values.push(block.textContent));
+  if (!values.includes("")) {
+    playerText.textContent = "Tie !";
+    blocks.forEach((block) => (block.style.pointerEvents = "none"));
+  }
 }
 
 startGame();
