@@ -1,0 +1,77 @@
+@import url("reset.css");
+body {
+  background-color: #f1e0dd;
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 5rem;
+}
+
+h2 {
+  margin-bottom: 5rem;
+}
+
+.game-container {
+  width: 29rem;
+  height: 29rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  border: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 3rem;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background: #fafafa;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+  cursor: pointer;
+}
+
+.block:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#error {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */
