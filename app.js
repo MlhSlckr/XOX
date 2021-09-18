@@ -22,7 +22,7 @@ function chooseArea(block) {
     turnPlayer();
   } else {
     errorText.textContent = `Heyyy player ${player}, this block is not empty`;
-    block.style.background = "red";
+    block.style.background = "rgb(255, 87, 87)";
     setTimeout(() => {
       errorText.textContent = ``;
       block.style.background = "";
@@ -118,5 +118,3 @@ function checkTie() {
     blocks.forEach((block) => (block.style.pointerEvents = "none"));
   }
 }
-
-startGame();
