@@ -14,32 +14,31 @@ function startGame() {
 function chooseArea(block) {
   if (block.textContent === "") {
     block.textContent = player;
-    if (player === "X") {
-      block.style.color = "red";
-    } else {
-      block.style.color = "blue";
-    }
     turnPlayer();
   } else {
-    errorText.textContent = `Heyyy player ${player}, this block is not empty`;
-    block.style.background = "rgb(255, 87, 87)";
+    block.style.background = "rgba(255, 0, 0, 0.5)";
+    errorText.textContent = `Hey player ${player}, this is not empty!!`;
     setTimeout(() => {
-      errorText.textContent = ``;
       block.style.background = "";
+      errorText.textContent = ``;
     }, 2000);
   }
   checkWin();
   checkTie();
   if (gameOver) {
-    playerText.textContent = `Game over, ${winner}'s Won!`;
-    blocks.forEach((block) => (block.style.pointerEvents = "none"));
+    playerText.textContent = `${winner} Won!`;
+    blocks.forEach((block) => {
+      block.style.pointerEvents = "none";
+    });
   }
 }
+
+startGame();
 
 function turnPlayer() {
   if (player === "X") {
     player = "O";
-  } else if (player === "O") {
+  } else {
     player = "X";
   }
   playerText.textContent = `${player}'s Turn!`;
